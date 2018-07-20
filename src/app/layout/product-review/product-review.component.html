@@ -1,0 +1,122 @@
+<section class="page-nav-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a routerLink="/dashboard">Home</a>
+          </li>
+          <li class="breadcrumb-item active">{{product?.product_name}}</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-4">
+        <img class="card-img-top" src="assets/images/category/replace.png" alt="">
+      </div>
+      <div class="col-md-6">
+        <div class="product">
+          <h3 class="title">{{product?.product_name}}</h3>
+          <p class="desc">
+            {{product?.product_description}}
+          </p>
+          <div class="price">
+            {{product?.product_price | currency : 'INR'}}
+          </div>
+          <div class="quantity">
+            <select class="custom-select">
+              <option value="1">{{product?.product_quantity}}</option>
+            </select>
+            <select class="custom-select">
+              <option selected>{{product?.product_quantity_type}}</option>
+            </select>
+          </div>
+          <button class="btn custom-btn" (click)="addToCart(product?.product_id_pk)">
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+<div class="divider"></div>
+<div class="">
+  <div class="container product-tabs">
+    <div class="row">
+      <ngb-tabset>
+        <ngb-tab title="Description">
+          <ng-template ngbTabContent>
+            <h5>Overview</h5>
+            <p>
+              An intensive hair treatment to prevent hair loss, dandruff and premature graying. The secret to Indians’ lush, glossy hair
+              – this traditional Ayurvedic recipe consists of potent herbs extracted into pure Sesame oil and Milk. A natural
+              conditioner for lush hair growth that nourishes deeply while cooling the scalp. Also includes Indigo, Eclipta
+              Alba and Gooseberry to promote hair growth. Anti-fungal Licorice and antibacterial Balloon Vine prevent scalp
+              infections. The earthy scent of the oil has a calming, meditative effect that soothes frayed nerves, uplifts
+              mood and aids in a good night's rest.
+            </p>
+            <h5>Benefits</h5>
+            <ul>
+              <li>100% Natural</li>
+              <li>Relieves hair loss </li>
+              <li>Promotes hair growth </li>
+              <li>Prevents dandruff</li>
+              <li>Natural conditioner</li>
+              <li>Prevents scalp infections </li>
+              <li>Cools and uplifts</li>
+            </ul>
+            <h5>What to Expect</h5>
+            <p>
+              A nourishing, strong and earthy oil that requires massaging into hair and scalp for best results.
+            </p>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab>
+          <ng-template ngbTabTitle>
+            Benifits
+          </ng-template>
+          <ng-template ngbTabContent>
+            <ul>
+              <li>100% Natural</li>
+              <li>Relieves hair loss </li>
+              <li>Promotes hair growth </li>
+              <li>Prevents dandruff</li>
+              <li>Natural conditioner</li>
+              <li>Prevents scalp infections </li>
+              <li>Cools and uplifts</li>
+            </ul>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="How to use">
+          <ng-template ngbTabContent>
+            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
+              master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+              dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
+              iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Ingredients">
+          <ng-template ngbTabContent>
+            <p>Ingredients</p>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Review">
+          <ng-template ngbTabContent>
+            <p>Review</p>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Call a doctor">
+          <ng-template ngbTabContent>
+            <p>Call a doctor</p>
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
+    </div>
+  </div>
+</div>

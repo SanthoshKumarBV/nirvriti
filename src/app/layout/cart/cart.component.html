@@ -1,0 +1,56 @@
+<section class="page-nav-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a routerLink="/dashboard">Home</a>
+          </li>
+          <li class="breadcrumb-item active">Cart</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table class="table table-responsive">
+            <tr *ngFor="let product of products">
+              <td>
+                <img class="" src="assets/images/category/replace.png" alt="" width="60">
+              </td>
+              <td>
+                <h5>{{product.product_name}}</h5>
+                <h6> {{product.product_title}}</h6>
+              </td>
+              <td>
+                {{product.product_price | currency : 'INR'}}
+              </td>
+              <td>
+                {{product.product_quantity}} {{product.product_quantity_type}}
+              </td>
+              <td>
+                <button class="btn btn-sm btn-danger" (click)="removeItemFromCart(product.product_id_pk)">remove</button>
+              </td>
+            </tr>
+            <tr>
+              <th colspan="4">Order Total</th>
+              <th>{{products?.total | currency : 'INR'}}</th>
+            </tr>
+            <tr>
+              <th colspan="4">
+              </th>
+              <th>
+                <button class="btn btn-lg btn-success" routerLink="/payment">Checkout</button>
+              </th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

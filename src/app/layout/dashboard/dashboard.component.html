@@ -1,0 +1,146 @@
+<div class="container-fluid" style="padding:0px;">
+    <div class="row">
+        <div class="col-md-12" style="padding:0px;">
+            <ngb-carousel>
+                <ng-template ngbSlide *ngFor="let slider of sliders">
+                    <img class="img-fluid mx-auto d-block" [src]="slider.imagePath" alt="Random first slide" width="100%">
+                    <div class="carousel-caption">
+                        <h3>{{slider.label}}</h3>
+                        <p>{{slider.text}}</p>
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+</div>
+<div class="divider"></div>
+<section class="products" id="postPregnancy">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h5 class="header">Popular Nirvriti - Premium Post Pregnancy Products
+                </h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="top-products">
+                    <div class="card card-default card-course-min card-course" *ngFor="let product of product_postpregnancy" routerLink="/product-review/{{product.product_name}}/{{product.product_id_pk}}">
+                        <img class="card-img-top card-img-max" src="assets/images/products/replace.png" alt="Card image cap">
+                        <div class="card-block animated fadeIn card-course-description">
+                            <div class="card-body">
+                                <h5 class="m-b-30">
+                                    <span class="semi-bold">{{product.product_name}}</span>
+                                </h5>
+                                <p>
+                                    {{product.product_title}}
+                                </p>
+                                <p>{{product.product_quantity}} {{product.product_quantity_type}}, {{product.product_price | currency : 'INR' }}</p>
+                            </div>
+
+                            <div class="card-footer">
+
+                                <a routerLink="/product-review/{{product.product_name}}/{{product.product_id_pk}}">Know more
+                                    <i class="fa fa-angle-double-right m-l-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a class="btn round-box view-more" routerLink="/product/Post Pregnancy/10">View more</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="products" *ngFor="let category of categories" id="productCategory{{category.category_id_pk}}">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h5 class="header">Popular Nirvriti - Premium {{category.category_name}}
+                </h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="top-products">
+                    <div class="card card-default card-course-min card-course" *ngFor="let product of product_prepregnancy" routerLink="/product-review/{{product.product_name}}/{{product.product_id_pk}}">
+                        <img class="card-img-top card-img-max" src="assets/images/products/replace.png" alt="Card image cap">
+                        <div class="card-block animated fadeIn card-course-description">
+                            <div class="card-body">
+                                <h5 class="m-b-30">
+                                    <span class="semi-bold">{{product.product_name}}</span>
+                                </h5>
+                                <p>
+                                    {{product.product_title}}
+                                </p>
+                                <p>{{product.product_quantity}} {{product.product_quantity_type}}, {{product.product_price | currency : 'INR'}}</p>
+                            </div>
+
+                            <div class="card-footer">
+
+                                <a routerLink="/product-review/{{product.product_name}}/{{product.product_id_pk}}">Know more
+                                    <i class="fa fa-angle-double-right m-l-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a class="btn round-box view-more" routerLink="/product/Pre Pregnancy/8">View more</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="products" id="babyCare">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h5 class="header">Popular Nirvriti - Premium Baby Products
+                </h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="top-products">
+                    <div class="card card-default card-course-min card-course" *ngFor="let product of product_babycare" routerLink="/product-review/{{product.product_name}}/{{product.product_id_pk}}">
+                        <img class="card-img-top card-img-max" src="assets/images/products/replace.png" alt="Card image cap">
+                        <div class="card-block animated fadeIn card-course-description">
+                            <div class="card-body">
+                                <h5 class="m-b-30">
+                                    <span class="semi-bold">{{product.product_name}}</span>
+                                </h5>
+                                <p>
+                                    {{product.product_title}}
+                                </p>
+                                <p>{{product.product_quantity}} {{product.product_quantity_type}}, {{product.product_price | currency : 'INR'}}</p>
+                            </div>
+                            <div class="card-footer">
+                                <a routerLink="/product-review/{{product.product_name}}/{{product.product_id_pk}}">Know more
+                                    <i class="fa fa-angle-double-right m-l-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a class="btn round-box view-more" routerLink="/product/Baby Care/13">View more</a>
+            </div>
+        </div>
+    </div>
+</section>

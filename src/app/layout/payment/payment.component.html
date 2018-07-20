@@ -1,0 +1,158 @@
+<section class="page-nav-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a routerLink="/dashboard">Home</a>
+          </li>
+          <li class="breadcrumb-item active">Payment</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <input type="text" class="form-control" name="pincode" [(ngModel)]="pincode" maxlength="6" pattern="0-9" placeholder="Enter your area pin code" />
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-md btn-primary" (click)="checkAvailability()">Check Availability</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div [class]="availability" *ngIf="pincode!=''" [innerHTML]='availabilityMessage'> </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="availability">
+      <div class="col-md-6">
+        <div class="divider"></div>
+        <div class="order-container">
+          <h5 class="heading5">Your Order</h5>
+          <div class="divider"></div>
+          <table class="table">
+            <tr>
+              <td>Product</td>
+              <td class="text-right">Total</td>
+            </tr>
+            <tr *ngFor="let product of products">
+              <td>{{product.product_name}}</td>
+              <td class="text-right">{{product.product_price | currency : 'INR'}}</td>
+            </tr>
+            <tr>
+              <td>Subtotal</td>
+              <td class="text-right">{{products.subtotal | currency : 'INR'}}</td>
+            </tr>
+            <tr>
+              <td>Shipping</td>
+              <td class="text-right">{{products?.shipping_fee | currency : 'INR'}}</td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td class="text-right">{{products.total | currency : 'INR'}}</td>
+            </tr>
+          </table>
+          <div class="divider"></div>
+          <div class="row payment-type">
+            <div class="col-md-12">
+              <input type="radio" name="paymentType">
+              <span> PAYTM</span>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="row payment-type">
+            <div class="col-md-12">
+              <input type="radio" name="paymentType">
+              <span> CASH ON DELIEVERY</span>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="row payment-type">
+            <div class="col-md-12">
+              <input type="radio" name="paymentType">
+              <span> CREDIT CARD</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="divider"></div>
+        <h5 class="heading5">Billing Address</h5>
+        <form>
+          <div class="form-row">
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+              <label for="formGroupExampleInput">First name</label>
+              <input type="text" class="form-control" placeholder="First name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+              <label for="formGroupExampleInput">Last name</label>
+              <input type="text" class="form-control" placeholder="Last name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+              <label for="formGroupExampleInput">Email</label>
+              <input type="email" class="form-control" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+              <label for="formGroupExampleInput">Address 1</label>
+              <input type="text" class="form-control" placeholder="Phone">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+              <label for="formGroupExampleInput">Address 2</label>
+              <input type="text" class="form-control" placeholder="Phone">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+              <label for="formGroupExampleInput">Postcode</label>
+              <input type="text" class="form-control" placeholder="First name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+              <label for="formGroupExampleInput">Town/City</label>
+              <input type="password" class="form-control" placeholder="Repeat Password">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+              <label for="formGroupExampleInput">Town/City</label>
+              <input type="password" class="form-control" placeholder="Repeat Password">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+              <label for="formGroupExampleInput">Mobile</label>
+              <input type="number" class="form-control" placeholder="Repeat Password">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 terms">
+              <input type="checkbox" name="agree" [(ngModel)]="agree"> Terms and condition
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-12">
+              <button class="btn btn-primary float-right" [disabled]="!agree" *ngIf="availability">
+                Place Order
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+
+
+  /************ product section *************/
+  
+  
+  .products{
+    width: 90%;
+    margin: 20px auto;
+    min-height: 340px;
+
+    h5.header{
+      padding: 20px 10px;
+      text-align: center;
+      font-weight: 600;
+      a.view-more{
+        font-size: 14px;
+        color: blue;
+        margin-left: 10px;
+      }
+      &::after{
+        content: '.';
+        display: block;
+        height: 1px;
+        width: 90px;
+        margin: 18px auto;
+        text-indent: -9999px;
+        border-top: 3px solid #cb1a21;
+      }
+    }
+    .title{
+      padding: 10px 0px;
+    }
+    .title,.price{
+      font-size: 14px;
+      line-height: 15px;
+      letter-spacing: 0.1px;
+    }
+    .title-bold{
+      font-weight: 500;
+      padding: 15px 0px;
+      font-size: 16px;
+    }
+    a.view-more {
+      font-size: 14px;
+      color: blue;
+      margin-left: 10px;
+    }
+    .round-box {
+      border: 1px solid;
+      border-radius: 23px;
+      padding: 12px 30px;
+      background: #cb1a21;
+      color: #ffffff !important;
+      transition: .3s all;
+  }
+  .card{
+    box-shadow: 0 4px 16px rgba(20,23,28,.25);
+  }
+  }
+  
+  
+  
+  p{
+    font-size: 14px;
+  }
+  
+  .divider{
+    display: block;
+    height: 20px;
+  }
+

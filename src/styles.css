@@ -1,0 +1,201 @@
+html,body,*{
+    font-family: Verdana !important
+}
+
+section{
+  margin-bottom: 30px;
+}
+
+a:focus{
+  outline: none;
+}
+
+
+
+/* You can add global styles to this file, and also import other style files */
+.breadcrumb {
+    padding: 0.75rem 0rem;
+    background-color: none;
+}
+
+.breadcrumb-item.active{
+    color: #ca2026;
+}
+
+  .product h3{
+  font-size: 22.5px;
+  text-align: left;
+  line-height: 12.5px;
+  letter-spacing: 0.2px;
+  }
+  
+  .product .desc{
+    font-size: 14px;
+    text-align: left;
+    margin-top: 15px;
+  }
+  
+  .product .view-more{
+    font-size: 10px;
+    line-height: 15px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    width: 73px;
+    height: 23.5px;
+    background-color: #d3b02b;
+    border: none;
+    float: right;
+  }
+  
+  
+  /************ latest product section *************/
+  
+  
+  .latest-products{
+    width: 90%;
+    min-height: 500px;
+  }
+  
+  .latest-products .title,.latest-products .price{
+    font-size: 14px;
+    line-height: 15px;
+    letter-spacing: 0.1px;
+  }
+  
+  .latest-products .title{
+    margin-top: 25px;
+  }
+  
+  .latest-products .price{
+    color: #999999;
+  }
+  
+  .latest-products .desc{
+    display: none;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    text-align: left;
+    color: #000000;
+    margin-top: 5px;
+  }
+  
+  .latest-products .product-img{
+    padding: 25px 0px;
+    background: #eeeded;
+    position: relative;
+  }
+  
+  .product-img-overlay{
+    display: none;
+  }
+
+  .product-wraper:hover .product-img-overlay{
+    display: block;
+    position: absolute;
+    background: red;
+    width: calc( 100% - 20px );
+    height: calc( 100% - 20px );
+    top: 0;
+    margin: 10px;
+    opacity: 0.87;
+    text-align: center;
+    background-color: #945f25;
+  }
+  
+  .add-to-cart {
+    font-size: 14px;
+    line-height: 1.88;
+    letter-spacing: 0.1px;
+    text-align: left;
+    color: #ffffff !important;
+    border: 1px solid;
+    padding: 10px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .latest-products .category-heading{
+    object-fit: contain;
+    font-size: 22.5px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 3.56;
+    letter-spacing: 0.2px;
+    text-align: left;
+    color: #000000;
+  }
+
+  .product .view-more{
+    font-size: 10px;
+    line-height: 15px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    width: 73px;
+    height: 23.5px;
+    background-color: #d3b02b;
+    border: none;
+    float: right;
+  }
+
+  .product-wraper{
+    box-sizing: border-box;
+    margin-bottom: 50px;
+   
+  }
+  
+.product-wraper:hover.active{
+  padding: 10px;
+  margin-top: -10px;
+  box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+.product-wraper:hover .desc{
+  display: block;
+}
+
+  
+  /*********** generic css ***********/
+  .custom-btn{
+    position: relative;
+    background-color: #d3b02b;
+    border: none;
+    padding: 5px 35px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    max-width: 150px;
+  }
+  
+  .btn-wrapper{
+    border: 1px solid #d3b02b;
+    position: absolute;
+    width: 100%;
+    height: 35px;
+    top: 4px;
+    left: -6px;
+  }
+
+  .btn-wrapper-top{
+    border: 1px solid #d3b02b;
+    position: absolute;
+    width: 100%;
+    height: 41px;
+    top: -8px;
+    left: -7px;
+  }
+  
+  .divider{
+    display: block;
+    height: 20px;
+  }
+
+
+
+
+
+ 

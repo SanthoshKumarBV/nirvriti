@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/bootstrap";
+@import "spinner";
+@import "utils";
+@import "rtl";
+@import "responsive";
+
+@media print {
+    .breadcrumb {
+        display: none !important;
+    }
+}
+
+
+a{
+    cursor: pointer;
+}
+
+.breadcrumb {
+    padding: 0.75rem 0rem;
+    background: none;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.67;
+  letter-spacing: 0.2px;
+  text-align: left;
+}
+
+.breadcrumb-item.active{
+    color: #ca2026;
+}

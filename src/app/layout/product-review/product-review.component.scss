@@ -1,0 +1,82 @@
+
+
+ .custom-btn{
+  background: #d3b02b;
+  color: #fff;
+ }
+  
+  .product{
+    padding: 10px;
+  }
+  
+  .product h3{
+  font-size: 22.5px;
+  text-align: left;
+  line-height: 12.5px;
+  letter-spacing: 0.2px;
+  }
+  
+  .product .desc{
+    font-size: 14px;
+    text-align: left;
+    margin-top: 15px;
+  }
+  
+  .product .view-more{
+    font-size: 10px;
+    line-height: 15px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    width: 73px;
+    height: 23.5px;
+    background-color: #d3b02b;
+    border: none;
+    float: right;
+  }
+
+  .product .price{
+    font-size: 22.5px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.67;
+    letter-spacing: 0.2px;
+    text-align: left;
+    color: #0a0a0a;
+  }
+
+  .product .quantity{
+    margin: 35px 0px;
+  }
+
+  .product .quantity .custom-select{
+    width: 100px;
+  }
+
+  .product .quantity .custom-select:first-child{
+    margin-right: 15px;
+  }
+  .tab-content{
+    padding: 10px !important;
+  }
+  
+ /********** tabs css **********/
+ 
+ .nav-tabs {
+  border-bottom: 1px solid #d3b02b !important;
+}
+
+  .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #ffc107;
+    background-color: #fff;
+    border-color: #ffc107 #ffc107 #fff;
+  }
+
+  .nav-tabs .nav-link{
+    color: #495057;
+  }
+  
+  .product-tabs{
+    padding: 30px;
+  }
+ 

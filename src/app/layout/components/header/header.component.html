@@ -1,0 +1,209 @@
+<section class="banner banner1">
+    <div class="container">
+        <div class="row header-2">
+            <div class="col-xs-6 col-sm-2 col-md-3">
+                <img class="logo" routerLink="/dashboard" src="assets/images/logo/logo.png" alt="Card image cap">
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-3 col-lg-2 align-self-center">
+                <ul class="menu">
+                    <li class="primary-menu products-menu">
+                        <a (click)="productListMenu()">
+                            <i class="fa fa-th-large fa-fw m-r-5"></i> Products </a>
+                        <div class="products-list" *ngIf="menu">
+                            <ul *ngIf="pageTitle=='dashboard'">
+                                <li *ngFor="let category of categories" (click)="getProduct(category.category_id_pk)">
+                                    <a>{{category.category_name}}</a>
+                                </li>
+                            </ul>
+                            <ul *ngIf="pageTitle!='dashboard'" (click)="hideMenu()">
+                                <li *ngFor="let category of categories" routerLink="/product/{{category.category_name}}/{{category.category_id_pk}}">
+                                    <a>{{category.category_name}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 align-self-center">
+
+                <div class="search">
+                    <input type="serach" name="search" [(ngModel)]="search" (keyup)="searchProducts(search)" class="form-control" placeholder="Search products here"
+                    />
+                    <div class="search-result" *ngIf="products">
+                        <ul>
+                            <li *ngFor="let product of products" routerLink="/product-review/{{product.product_name}}/{{product.product_id_pk}}" (click)="products='';search=''">
+                                {{product.product_name}} -
+                                <span>{{product.product_title}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-3 align-self-center">
+                <ul class="menu">
+
+                    <li class="secondary-menu">
+                        <a #loginModel (click)="openLoginModal()">
+                            <i class="fa fa-sign-in"></i>
+                            Login
+                        </a>
+                    </li>
+                    <li class="secondary-menu">
+                        <a #myBtn (click)="openModal()">
+                            <i class="fa fa-user-plus fa-fw m-r-5"></i>
+                            Regsiter</a>
+                    </li>
+                    <li class="secondary-menu">
+                        <a routerLink="/cart">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> {{cart}} </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Register Modal -->
+<div id="myModal" #myModal class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h5>Register with us</h5>
+        <div class="divider"></div>
+        <form>
+            <div class="form-row">
+                <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
+                    <label for="formGroupExampleInput">First name</label>
+                    <input type="text" class="form-control" placeholder="First name">
+                </div>
+                <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
+                    <label for="formGroupExampleInput">Last name</label>
+                    <input type="text" class="form-control" placeholder="Last name">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
+                    <label for="formGroupExampleInput">Email</label>
+                    <input type="text" class="form-control" placeholder="Email">
+                </div>
+                <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
+                    <label for="formGroupExampleInput">Phone</label>
+                    <input type="text" class="form-control" placeholder="Phone">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
+                    <label for="formGroupExampleInput">Password</label>
+                    <input type="password" class="form-control" placeholder="Password">
+                </div>
+                <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
+                    <label for="formGroupExampleInput">Repeat Password</label>
+                    <input type="password" class="form-control" placeholder="Repeat Password">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="agree"> By Registering you agree to our Terms & Conditions </p>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="divider"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-center signin-text"> You can also signin with </p>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <span (click)="socialSignIn('facebook')">
+                        <img src="assets/images/social/fb.png" /> </span>
+                    <span class="social">or</span>
+                    <span (click)="socialSignIn('google')">
+                        <img src="assets/images/social/g.png" /> </span>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="divider"></div>
+            <div class="row">
+                <div class="col-md-8">
+
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-sm btn-primary float-right">
+                        Register
+                    </button>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-sm btn-primary float-right" (click)="closeModal()">
+                        Back
+                    </button>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="divider"></div>
+        </form>
+    </div>
+
+</div>
+
+
+<!-- Login Modal -->
+<div id="myModal" #loginModal class="modal login-modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" (click)="closeLoginModal()">&times;</span>
+        <div class="row">
+            <div class="col-md-6 login-col" style="border-right: 1px solid #999;">
+                <h5>Login / Signup</h5>
+                <div class="divider"></div>
+                <form>
+                    <div class="form-row">
+                        <div class="col-xs-12">
+                            <label for="formGroupExampleInput">Enter your Email / Mobile Number</label>
+                            <input type="text" class="form-control" placeholder="Email / Mobile Number">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                        </div>
+                        <div class="col-md-5">
+                            <div class="btn btn-sm btn-primary float-right">
+                                <a>Continue</a>
+                                <div class="btn-wrapper"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+
+                    <div class="divider"></div>
+                    <div class="divider"></div>
+                    <div class="divider"></div>
+
+                </form>
+            </div>
+            <div class="col-md-6 login-col">
+                <h5 class="text-center">Register With Us</h5>
+                <div class="divider"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-center signin-text"> You can also signin with </p>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <span (click)="socialSignIn('facebook')">
+                            <img src="assets/images/social/fb.png" /> </span>
+                        <span class="social">or</span>
+                        <span (click)="socialSignIn('google')">
+                            <img src="assets/images/social/g.png" /> </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
